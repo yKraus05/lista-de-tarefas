@@ -6,6 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de tarefas</title>
     <style>
+        *{
+            padding: 10px;
+        }
+        .conteiner h1{
+            align-items: center;
+        }
+        .conteiner{ 
+            text-align: center;
+            background-color: rgb(223, 223, 223);
+            display: block;
+            height: 400px;
+            width: 300px;
+            border-radius: 4px;
+        }
         .concluida{
          text-decoration: line-through;   
         }
@@ -13,6 +27,7 @@
 </head>
 
 <body>
+    <div class="conteiner">
     <h1>Lista de tarefas</h1>
     <div id="novaTarefa">
     <input id="adicionarTarefa" placeholder="Escreva sua nova tarefa" type="text"><br>
@@ -20,6 +35,7 @@
     <button id="botaoTarefa" accesskey="">Adicionar Tarefa</button>
     </div>
     <ol id="minhaLista"></ol>
+</div>
     <script>
         const adicionarTarefa = document.getElementById("adicionarTarefa");
         const minhaLista = document.getElementById("minhaLista");
