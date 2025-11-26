@@ -17,9 +17,9 @@
     <div id="novaTarefa">
     <input id="adicionarTarefa" placeholder="Escreva sua nova tarefa" type="text"><br>
     <br>
-    <button id="botaoTarefa">Adicionar Tarefa</button>
+    <button id="botaoTarefa" accesskey="">Adicionar Tarefa</button>
     </div>
-    <ul id="minhaLista"></ul>
+    <ol id="minhaLista"></ol>
     <script>
         const adicionarTarefa = document.getElementById("adicionarTarefa");
         const minhaLista = document.getElementById("minhaLista");
@@ -62,7 +62,7 @@
     }
         botaoTarefa.addEventListener('click',criarTarefa);
 
-
+      
     </script>
 </body>
 
