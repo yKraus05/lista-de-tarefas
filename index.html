@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de tarefas</title>
+    <style>
+        .concluida{
+         text-decoration: line-through;   
+        }
+    </style>
 </head>
 
 <body>
@@ -20,17 +25,44 @@
         const minhaLista = document.getElementById("minhaLista");
         const botaoTarefa = document.getElementById("botaoTarefa");
 
-        function adicionarTarefa(){
+        function criarTarefa(){
             const texto = adicionarTarefa.value.trim();
             if(texto===""){
                 alert("Digite uma tarefa!");
                 return;
             }
-        }
+        
         const li = document.createElement('li');
         li.textContent=texto;
         const area = document.createElement('div');
         area.className = area;
+
+        const btnConcluir = document.createElement('button');
+        btnConcluir.textContent='Concluir';
+        btnConcluir.addEventListener('click',function(){
+            li.classList.toggle('concluida');
+        });
+        const btnRemover = document.createElement('button');
+        btnRemover.textContent='Excluir';
+        btnRemover.addEventListener('click',function(){
+            minhaLista.removeChild(li);
+        });
+        area.appendChild(btnConcluir);
+        area.appendChild(btnRemover);
+
+        const spanTexto = document.createElement('span');
+        spanTexto.textContent=texto;
+        li.textContent="";
+        li.appendChild(spanTexto);
+        li.appendChild(area);
+        minhaLista.appendChild(li);
+
+        adicionarTarefa.value="";
+        adicionarTarefa.focus();
+    }
+        botaoTarefa.addEventListener('click',criarTarefa);
+
+
     </script>
 </body>
 
